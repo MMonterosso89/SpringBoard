@@ -1,0 +1,32 @@
+#Total number of events
+SELECT COUNT(event_name) 
+FROM tutorial.yammer_events
+
+#yields 340832
+
+#Total number of events which are searches
+
+SELECT COUNT(event_name)
+FROM tutorial.yammer_events
+WHERE event_name LIKE 'search_autocomplete' OR event_name LIKE 'search_run'
+
+#yields 30839
+
+30839 / 340832 = .0904 = 9% of all events are searches!
+
+#of this
+
+SELECT COUNT(event_name)
+FROM tutorial.yammer_events
+WHERE event_name LIKE 'search_autocomplete'
+
+#yields 17820 are autocompletes
+
+SELECT COUNT(event_name)
+FROM tutorial.yammer_events
+WHERE event_name LIKE 'search_run'
+
+#yields 13019 are full ran searches. 
+
+#Assuming people will click autocomplete first, this implies 42% of searches are not sucessful with autocomplete alone!
+
