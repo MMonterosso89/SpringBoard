@@ -30,3 +30,5 @@ WHERE event_name LIKE 'search_run'
 
 #Assuming people will click autocomplete first, this implies 42% of searches are not sucessful with autocomplete alone!
 
+
+
